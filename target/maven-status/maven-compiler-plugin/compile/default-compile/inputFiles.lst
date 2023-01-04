@@ -29,6 +29,7 @@ D:\USUARIO\Downloads\mbg\src\main\java\com\example\mbg\Controller\SkillsControll
 D:\USUARIO\Downloads\mbg\src\main\java\com\example\mbg\MbgApplication.java
 D:\USUARIO\Downloads\mbg\src\main\java\com\example\mbg\Security\Repository\IRolRepository.java
 D:\USUARIO\Downloads\mbg\src\main\java\com\example\mbg\Security\Service\UserDetailsImp.java
+D:\USUARIO\Downloads\mbg\src\main\java\com\example\mbg\WebConfig.java
 D:\USUARIO\Downloads\mbg\src\main\java\com\example\mbg\Interface\IProyectoService.java
 D:\USUARIO\Downloads\mbg\src\main\java\com\example\mbg\Controller\ProyectoController.java
 D:\USUARIO\Downloads\mbg\src\main\java\com\example\mbg\Security\Service\RolService.java
