@@ -12,6 +12,7 @@ com\example\mbg\Entity\Proyecto.class
 com\example\mbg\Security\Repository\IUsuarioRepository.class
 com\example\mbg\Controller\SkillsController.class
 com\example\mbg\Security\Entity\UsuarioPrincipal.class
+com\example\mbg\WebConfig.class
 com\example\mbg\Security\Dto\LoginUsuario.class
 com\example\mbg\Security\Entity\Usuario.class
 com\example\mbg\Security\Jwt\JwtEntryPoint.class
