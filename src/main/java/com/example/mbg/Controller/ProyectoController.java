@@ -4,6 +4,7 @@ import com.example.mbg.Entity.Proyecto;
 import com.example.mbg.Interface.IProyectoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,12 +28,14 @@ public class ProyectoController {
         return proyectos;
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/proyectos/crear")
     public String crearProyecto(@RequestBody Proyecto proyecto){
         proyectoService.crearProyecto(proyecto);
         return "Se ha creado el proyecto correctamente.";
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/proyectos/eliminar/{id}")
     public String eliminarProyecto(@PathVariable Long id){
         proyectoService.eliminarProyecto(id);
@@ -45,6 +48,7 @@ public class ProyectoController {
         return proyecto;
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/proyectos/actualizar/{id}")
     public Proyecto actualizarProyecto(@PathVariable Long id,
                                        @RequestParam("nombre") String nombre,

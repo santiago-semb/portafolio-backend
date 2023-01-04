@@ -4,6 +4,7 @@ import com.example.mbg.Entity.Skills;
 import com.example.mbg.Interface.ISkillsService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,12 +28,14 @@ public class SkillsController {
         return skills;
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/skills/crear")
     public String crearSkill(@RequestBody Skills skill){
         skillsService.crearSkill(skill);
         return "Se ha creado la skill correctamente.";
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/skills/eliminar/{id}")
     public String eliminarSkill(@PathVariable Long id){
         skillsService.eliminarSkill(id);
@@ -45,6 +48,7 @@ public class SkillsController {
         return skill;
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/skills/actualizar/{id}")
     public Skills actualizarSkill(@PathVariable Long id,
                                   @RequestParam("nombre") String nombre,
