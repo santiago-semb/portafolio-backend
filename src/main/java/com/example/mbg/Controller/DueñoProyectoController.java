@@ -28,14 +28,14 @@ public class DueñoProyectoController {
         return dueños;
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/dueño/crear")
     public String crearDueño(@RequestBody DueñoProyecto dueño){
         dueñoService.crearDueño(dueño);
         return "Se ha creado el dueño correctamente.";
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/dueño/eliminar/{id}")
     public String eliminarDueño(@PathVariable Long id){
         dueñoService.eliminarDueño(id);
@@ -48,7 +48,8 @@ public class DueñoProyectoController {
         return dueño;
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    
+    //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/dueño/actualizar/{id}")
     public DueñoProyecto actualizarDueño(@PathVariable Long id,
                                          @RequestParam("nombre") String nombre,
