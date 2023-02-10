@@ -28,14 +28,14 @@ public class SkillsController {
         return skills;
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/skills/crear")
     public String crearSkill(@RequestBody Skills skill){
         skillsService.crearSkill(skill);
         return "Se ha creado la skill correctamente.";
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/skills/eliminar/{id}")
     public String eliminarSkill(@PathVariable Long id){
         skillsService.eliminarSkill(id);
@@ -48,7 +48,7 @@ public class SkillsController {
         return skill;
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/skills/actualizar/{id}")
     public Skills actualizarSkill(@PathVariable Long id,
                                   @RequestParam("nombre") String nombre,
