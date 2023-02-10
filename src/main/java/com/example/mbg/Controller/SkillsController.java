@@ -28,14 +28,14 @@ public class SkillsController {
         return skills;
     }
     
-    @PreAuthorize("hasRole('USER')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/skills/crear")
     public String crearSkill(@RequestBody Skills skill){
         skillsService.crearSkill(skill);
         return "Se ha creado la skill correctamente.";
     }
     
-    @PreAuthorize("hasRole('USER')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/skills/eliminar/{id}")
     public String eliminarSkill(@PathVariable Long id){
         skillsService.eliminarSkill(id);
